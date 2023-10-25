@@ -30,7 +30,7 @@ Before you begin, ensure you have met the following requirements:
 - **Clone the Repository**: Start by cloning this repository to your local computer using Git. Open your terminal and run the following command:
 
   ```bash
-  git clone https://github.com/anjieWei2/countryInfo.git
+  git clone https://github.com/anjieWei-2/countryInfo.git
   ```
 
 - **Navigate to the Project Directory**: Change your working directory to the project folder:
