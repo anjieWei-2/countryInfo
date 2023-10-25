@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SearchBar from "./components/SearchBar"
-import SearchResult from "./components/searchResult"
+import SearchResult from "./components/SearchResult"
 import axios from 'axios'
 import Alert from 'react-bootstrap/Alert';
 import './App.css'
