@@ -12,5 +12,7 @@
         "dest": "server.js"
       }
     ],
-    "rewrites": [{ "source": "/(.*)", "destination": "/" }] 
-  }
+    "engines": {
+        "node": "18.x"
+      }  
+}
