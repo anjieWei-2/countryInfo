@@ -5,7 +5,7 @@ import SearchResult from "./components/SearchResult"
 import axios from 'axios'
 import Alert from 'react-bootstrap/Alert';
 import './App.css'
-const serverUrl = 'https://country-info-server.vercel.app/'
+const serverUrl = 'https://country-info-server.vercel.app'
 
 
 function App() {
