@@ -2,8 +2,12 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Button from 'react-bootstrap/Button';
 import Stack from 'react-bootstrap/Stack';
-const serverUrl = 'https://countryinfo-server.onrender.com'
-
+let serverUrl;
+if (process.env.NODE_ENV === 'production') {
+  serverUrl = 'https://countryinfo-server.onrender.com'
+} else {
+  serverUrl = 'http://localhost:5000';
+}
 function SearchBar(props) {
     const [country, setCountry] = useState('')
     const [results, setResults] = useState([])

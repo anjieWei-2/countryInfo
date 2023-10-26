@@ -5,7 +5,14 @@ import SearchResult from "./components/SearchResult"
 import axios from 'axios'
 import Alert from 'react-bootstrap/Alert';
 import './App.css'
-const serverUrl = 'https://countryinfo-server.onrender.com'
+
+let serverUrl;
+if (process.env.NODE_ENV === 'production') {
+  serverUrl = 'https://countryinfo-server.onrender.com'
+} else {
+  serverUrl = 'http://localhost:5000';
+}
+
 
 
 function App() {

@@ -2,8 +2,7 @@ const express= require('express')
 const app = express()
 const cors = require("cors")
 const fetchRoutes = require('./countryFetcher')
-const port = process.env.PORT;
-const allowedOrigins = 'https://countryinfo-client-8dcyetdck-anjie-weis-projects.vercel.app'
+const port = process.env.PORT||5000;
 
 app.use(cors({
     origin: '*',
