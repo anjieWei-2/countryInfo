@@ -3,7 +3,7 @@ const app = express()
 const cors = require("cors")
 const fetchRoutes = require('./countryFetcher')
 const port = process.env.PORT;
-const allowedOrigins = 'https://country-info-eta-sage.vercel.app'
+const allowedOrigins = 'https://countryinfo-client-8dcyetdck-anjie-weis-projects.vercel.app'
 
 app.use(cors({
     origin: allowedOrigins,
