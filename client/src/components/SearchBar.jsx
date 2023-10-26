@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Button from 'react-bootstrap/Button';
 import Stack from 'react-bootstrap/Stack';
-const serverUrl = 'https://country-info-server.vercel.app/'
+const serverUrl = 'https://country-info-server.vercel.app'
 
 function SearchBar(props) {
     const [country, setCountry] = useState('')
