@@ -7,6 +7,7 @@ const allowedOrigins = 'https://country-info-eta-sage.vercel.app/'
 
 app.use(cors({
     origin: allowedOrigins,
+    credentials: true
 }))
 
 app.use('/api', fetchRoutes)
