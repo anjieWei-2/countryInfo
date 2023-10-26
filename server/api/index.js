@@ -6,8 +6,7 @@ const port = process.env.PORT;
 const allowedOrigins = 'https://countryinfo-client-8dcyetdck-anjie-weis-projects.vercel.app'
 
 app.use(cors({
-    origin: allowedOrigins,
-    credentials: true
+    origin: '*',
 }))
 
 app.use('/api', fetchRoutes)
