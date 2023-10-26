@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Button from 'react-bootstrap/Button';
 import Stack from 'react-bootstrap/Stack';
-
+const serverUrl = 'https://country-info-server.vercel.app/'
 
 function SearchBar(props) {
     const [country, setCountry] = useState('')
@@ -24,7 +24,7 @@ function SearchBar(props) {
 
     const fetchData = async()=>{
         try {
-            const response = await axios.get(`http://localhost:5000/api/country-list?country=${country}`) 
+            const response = await axios.get(`${serverUrl}/api/country-list?country=${country}`) 
             setResults(response.data.results)
         }catch (error) {
             console.error('Error fetching data:', error)

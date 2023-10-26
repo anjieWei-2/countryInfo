@@ -5,7 +5,7 @@ import SearchResult from "./components/SearchResult"
 import axios from 'axios'
 import Alert from 'react-bootstrap/Alert';
 import './App.css'
-
+const serverUrl = 'https://country-info-server.vercel.app/'
 
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
   const [error, setError] = useState('')
   const fetchData = async(country)=>{
     try {
-        const response = await axios.get(`http://localhost:5000/api/country-info?country=${country}`) 
+        const response = await axios.get(`${serverUrl}/api/country-info?country=${country}`) 
         setResult(response.data.results)
     }catch (error) {
         console.error('Error fetching data:', error)
