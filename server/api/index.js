@@ -8,9 +8,7 @@ const allowedOrigins = 'https://country-info-eta-sage.vercel.app/'
 app.use(cors({
     origin: allowedOrigins,
 }))
-app.get('/',(req,res)=>{
-    res.send('hi')
-})
+
 app.use('/api', fetchRoutes)
 
 app.listen(port, () => {console.log(`Server started on port ${port}`)})
