@@ -23,16 +23,17 @@ function App() {
     try {
         const response = await axios.get(`${serverUrl}/api/country-info?country=${country}`) 
         setResult(response.data.results)
+        setIsLoading(false)
     }catch (error) {
         console.error('Error fetching data:', error)
-        setError('Failed to fetch data. Maybe there is a typo?');
+        setError('Failed to fetch data. Maybe there is a typo?')
+        setIsLoading(false)
     }
   }
   const handleSearch = (country) => {
     if (country){
       setIsLoading(true)
       fetchData(country)
-      setIsLoading(false)
       setShowResults(true)
     }
   }
