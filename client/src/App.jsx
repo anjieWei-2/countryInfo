@@ -5,17 +5,17 @@ import SearchResult from "./components/SearchResult"
 import axios from 'axios'
 import Alert from 'react-bootstrap/Alert';
 import './App.css'
-
-let serverUrl;
-if (process.env.NODE_ENV === 'production') {
-  serverUrl = 'https://countryinfo-server.onrender.com'
-} else {
-  serverUrl = 'http://localhost:5000';
-}
-
+import Spinner from 'react-bootstrap/Spinner';
 
 
 function App() {
+  let serverUrl;
+    if (process.env.NODE_ENV === 'production') {
+      serverUrl = 'https://countryinfo-server.onrender.com'
+    } else {
+      serverUrl = 'http://localhost:5000';
+    }
+  const [isLoading, setIsLoading] = useState(false)
   const [showResults, setShowResults] = useState(false)
   const [result, setResult] = useState([])
   const [error, setError] = useState('')
@@ -30,7 +30,9 @@ function App() {
   }
   const handleSearch = (country) => {
     if (country){
+      setIsLoading(true)
       fetchData(country)
+      setIsLoading(false)
       setShowResults(true)
     }
   }
@@ -53,6 +55,10 @@ function App() {
 
     <>      
       {error?(<Alert variant='warning'>{error}</Alert>):
+      isLoading?(
+        <Spinner animation="border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>):
       showResults && Object.keys(result).length==1 && <div className="result"> <SearchResult result={result}/></div>}
     </>
                          
